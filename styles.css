@@ -235,6 +235,46 @@ nav a:hover {
   object-fit: contain;
 }
 
+/* Styles for the new Privacy Policy section */
+#privacy-policy {
+    /* Set a maximum height and enable scrolling */
+    max-height: 60vh; /* Adjust this value to control the visible height */
+    overflow-y: auto; /* Enables vertical scrolling when content exceeds max-height */
+    padding-bottom: 2rem; /* Add padding at the bottom */
+}
+
+#privacy-policy .policy-content {
+    padding: 1rem;
+    max-width: 90vw; /* Ensure content respects the content-box width */
+}
+
+#privacy-policy h1 {
+    margin-bottom: 1rem;
+}
+
+#privacy-policy h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #d4af37; /* Use the accent color for section titles */
+}
+
+#privacy-policy hr {
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 1rem 0;
+}
+
+#privacy-policy p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Optional: Improve readability for policy text */
+#privacy-policy strong {
+    color: #d4af37;
+}
+
 @media (max-width: 768px) {
   nav {
     padding: 0.75rem 0.5rem;
