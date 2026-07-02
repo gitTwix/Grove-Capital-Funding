@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Funding Application - Grove Capital Funding</title>
+    <link rel="icon" type="image/png" href="./assets/images/gcf-fav.png">
+    <link rel="stylesheet" href="form-styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="form-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="./assets/images/gcf-logo.png" alt="Grove Capital Funding">
+                </a>
+            </div>
+            <div class="header-text">
+                <h1>Business Funding Application</h1>
+                <p>Complete the form below to begin your funding journey</p>
+            </div>
+            <a href="index.html" class="back-home">← Back to Home</a>
+        </div>
+    </header>
+
+    <!-- PROGRESS BAR -->
+    <div class="form-progress">
+        <div class="progress-bar" id="formProgressBar"></div>
+    </div>
+
+    <main class="form-main">
+        <div class="form-container">
+
+            <!-- FORM INTRO -->
+            <div class="form-intro">
+                <div class="intro-icon">💼</div>
+                <div class="intro-text">
+                    <h2>Get Funded in as Little as 48 Hours</h2>
+                    <p>Fill out the application below. All information is kept strictly confidential and secured. Fields marked with <span class="required-star">*</span> are required.</p>
+                </div>
+            </div>
+
+            <form id="gcfForm" enctype="multipart/form-data" novalidate>
+
+                <!-- ============================================================ -->
+                <!-- SECTION 1: BUSINESS DETAILS -->
+                <!-- ============================================================ -->
+                <div class="form-section" id="step-business">
+                    <div class="section-header">
+                        <div class="section-badge">01</div>
+                        <div class="section-title">
+                            <h2>Business Details</h2>
+                            <p>Tell us about your business</p>
+                        </div>
+                    </div>
+
+                    <div class="fields-grid">
+
+                        <!-- Business Legal Name -->
+                        <div class="field-group">
+                            <label for="business_legal_name" class="field-label required">Business Legal Name</label>
+                            <input type="text" id="business_legal_name" name="business_legal_name" class="field-input" placeholder="Enter legal business name" required>
+                            <span class="field-error" id="err_business_legal_name"></span>
+                        </div>
+
+                        <!-- DBA Name -->
+                        <div class="field-group">
+                            <label for="dba_name" class="field-label">DBA Name <span class="optional">(if applicable)</span></label>
+                            <input type="text" id="dba_name" name="dba_name" class="field-input" placeholder="Doing Business As">
+                        </div>
+
+                        <!-- Street Address -->
+                        <div class="field-group full-width">
+                            <label for="street_address" class="field-label required">Business Street Address</label>
+                            <input type="text" id="street_address" name="street_address" class="field-input" placeholder="123 Main Street" required>
+                            <span class="field-error" id="err_street_address"></span>
+                        </div>
+
+                        <!-- City State Zip -->
+                        <div class="field-group full-width">
+                            <label for="city_state_zip" class="field-label required">City, State, ZIP</label>
+                            <input type="text" id="city_state_zip" name="city_state_zip" class="field-input" placeholder="Miami, FL 33101" required>
+                            <span class="field-error" id="err_city_state_zip"></span>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="field-group">
+                            <label for="phone_number" class="field-label required">Main Phone Number</label>
+                            <input type="tel" id="phone_number" name="phone_number" class="field-input" placeholder="(555) 555-5555" required>
+                            <span class="field-error" id="err_phone_number"></span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="field-group">
+                            <label for="business_email" class="field-label required">Business Email</label>
+                            <input type="email" id="business_email" name="business_email" class="field-input" placeholder="you@yourbusiness.com" required>
+                            <span class="field-error" id="err_business_email"></span>
+                        </div>
+
+                        <!-- Federal Tax ID -->
+                        <div class="field-group">
+                            <label for="tax_id" class="field-label required">Federal / Tax ID (EIN)</label>
+                            <input type="text" id="tax_id" name="tax_id" class="field-input" placeholder="XX-XXXXXXX" required>
+                            <span class="field-error" id="err_tax_id"></span>
+                        </div>
+
+                        <!-- Business Start Date -->
+                        <div class="field-group">
+                            <label for="business_start_date" class="field-label required">Business Start Date</label>
+                            <input type="date" id="business_start_date" name="business_start_date" class="field-input" required>
+                            <span class="field-error" id="err_business_start_date"></span>
+                        </div>
+
+                        <!-- Amount Requested -->
+                        <div class="field-group">
+                            <label for="amount_requested" class="field-label required">Amount Requested ($)</label>
+                            <input type="number" id="amount_requested" name="amount_requested" class="field-input" placeholder="Enter amount" min="10000" max="5000000" required>
+                            <span class="field-error" id="err_amount_requested"></span>
+                        </div>
+
+                        <!-- Average Monthly Revenue -->
+                        <div class="field-group">
+                            <label for="monthly_revenue" class="field-label required">Average Monthly Revenue ($)</label>
+                            <input type="number" id="monthly_revenue" name="monthly_revenue" class="field-input" placeholder="Enter amount" required>
+                            <span class="field-error" id="err_monthly_revenue"></span>
+                        </div>
+
+                        <!-- Purpose of Funding -->
+                        <div class="field-group full-width">
+                            <label for="purpose_of_funding" class="field-label required">Purpose of Funding</label>
+                            <textarea id="purpose_of_funding" name="purpose_of_funding" class="field-textarea" placeholder="Describe how you plan to use the funding..." rows="4" required></textarea>
+                            <span class="field-error" id="err_purpose_of_funding"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- SECTION 2: OWNER DETAILS -->
+                <!-- ============================================================ -->
+                <div class="form-section" id="step-owners">
+                    <div class="section-header">
+                        <div class="section-badge">02</div>
+                        <div class="section-title">
+                            <h2>Owner Details</h2>
+                            <p>Information about the business owner(s)</p>
+                        </div>
+                    </div>
+
+                    <!-- OWNER 1 -->
+                    <div class="owner-block">
+                        <div class="owner-block-header">
+                            <span class="owner-badge">Owner 1</span>
+                            <span class="owner-required-note">Required</span>
+                        </div>
+
+                        <div class="fields-grid">
+
+                            <!-- Full Name -->
+                            <div class="field-group full-width">
+                                <label for="owner1_name" class="field-label required">Full Name</label>
+                                <input type="text" id="owner1_name" name="owner1_name" class="field-input" placeholder="First and Last Name" required>
+                                <span class="field-error" id="err_owner1_name"></span>
+                            </div>
+
+                            <!-- Street Address -->
+                            <div class="field-group full-width">
+                                <label for="owner1_address" class="field-label required">Home Street Address</label>
+                                <input type="text" id="owner1_address" name="owner1_address" class="field-input" placeholder="123 Home Street" required>
+                                <span class="field-error" id="err_owner1_address"></span>
+                            </div>
+
+                            <!-- City State Zip -->
+                            <div class="field-group full-width">
+                                <label for="owner1_city_state_zip" class="field-label required">City, State, ZIP</label>
+                                <input type="text" id="owner1_city_state_zip" name="owner1_city_state_zip" class="field-input" placeholder="Miami, FL 33101" required>
+                                <span class="field-error" id="err_owner1_city_state_zip"></span>
+                            </div>
+
+                            <!-- DOB -->
+                            <div class="field-group">
+                                <label for="owner1_dob" class="field-label required">Date of Birth</label>
+                                <input type="date" id="owner1_dob" name="owner1_dob" class="field-input" required>
+                                <span class="field-error" id="err_owner1_dob"></span>
+                            </div>
+
+                            <!-- SSN -->
+                            <div class="field-group">
+                                <label for="owner1_ssn" class="field-label required">Social Security Number</label>
+                                <div class="ssn-wrapper">
+                                    <input type="password" id="owner1_ssn" name="owner1_ssn" class="field-input" placeholder="XXX-XX-XXXX" maxlength="11" required>
+                                    <button type="button" class="ssn-toggle" data-target="owner1_ssn">👁</button>
+                                </div>
+                                <span class="field-error" id="err_owner1_ssn"></span>
+                            </div>
+
+                            <!-- Ownership % -->
+                            <div class="field-group">
+                                <label for="owner1_ownership" class="field-label required">% of Ownership</label>
+                                <input type="number" id="owner1_ownership" name="owner1_ownership" class="field-input" placeholder="e.g. 100" min="1" max="100" required>
+                                <span class="field-error" id="err_owner1_ownership"></span>
+                            </div>
+
+                            <!-- Signing Date -->
+                            <div class="field-group">
+                                <label for="owner1_date" class="field-label required">Signing Date</label>
+                                <input type="date" id="owner1_date" name="owner1_date" class="field-input" required>
+                                <span class="field-error" id="err_owner1_date"></span>
+                            </div>
+
+                            <!-- Signature -->
+                            <div class="field-group full-width">
+                                <label class="field-label required">Owner 1 Signature</label>
+                                <div class="signature-wrapper">
+                                    <div class="signature-instructions">
+                                        <span>✍️ Sign below using your mouse or finger</span>
+                                        <button type="button" class="clear-sig-btn" id="clear_owner1">Clear</button>
+                                    </div>
+                                    <canvas id="owner1_signature_canvas" class="signature-canvas"></canvas>
+                                    <input type="hidden" id="owner1_signature_data" name="owner1_signature_data">
+                                </div>
+                                <span class="field-error" id="err_owner1_signature"></span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- OWNER 2 -->
+                    <div class="owner-block owner-block-optional">
+                        <div class="owner-block-header">
+                            <span class="owner-badge owner-badge-optional">Owner 2</span>
+                            <span class="owner-optional-note">Optional - Only if applicable</span>
+                        </div>
+
+                        <div class="fields-grid">
+
+                            <!-- Full Name -->
+                            <div class="field-group full-width">
+                                <label for="owner2_name" class="field-label">Full Name</label>
+                                <input type="text" id="owner2_name" name="owner2_name" class="field-input" placeholder="First and Last Name">
+                            </div>
+
+                            <!-- Street Address -->
+                            <div class="field-group full-width">
+                                <label for="owner2_address" class="field-label">Home Street Address</label>
+                                <input type="text" id="owner2_address" name="owner2_address" class="field-input" placeholder="123 Home Street">
+                            </div>
+
+                            <!-- City State Zip -->
+                            <div class="field-group full-width">
+                                <label for="owner2_city_state_zip" class="field-label">City, State, ZIP</label>
+                                <input type="text" id="owner2_city_state_zip" name="owner2_city_state_zip" class="field-input" placeholder="Miami, FL 33101">
+                            </div>
+
+                            <!-- DOB -->
+                            <div class="field-group">
+                                <label for="owner2_dob" class="field-label">Date of Birth</label>
+                                <input type="date" id="owner2_dob" name="owner2_dob" class="field-input">
+                            </div>
+
+                            <!-- SSN -->
+                            <div class="field-group">
+                                <label for="owner2_ssn" class="field-label">Social Security Number</label>
+                                <div class="ssn-wrapper">
+                                    <input type="password" id="owner2_ssn" name="owner2_ssn" class="field-input" placeholder="XXX-XX-XXXX" maxlength="11">
+                                    <button type="button" class="ssn-toggle" data-target="owner2_ssn">👁</button>
+                                </div>
+                            </div>
+
+                            <!-- Ownership % -->
+                            <div class="field-group">
+                                <label for="owner2_ownership" class="field-label">% of Ownership</label>
+                                <input type="number" id="owner2_ownership" name="owner2_ownership" class="field-input" placeholder="e.g. 50" min="1" max="100">
+                            </div>
+
+                            <!-- Signing Date -->
+                            <div class="field-group">
+                                <label for="owner2_date" class="field-label">Signing Date</label>
+                                <input type="date" id="owner2_date" name="owner2_date" class="field-input">
+                            </div>
+
+                            <!-- Signature -->
+                            <div class="field-group full-width">
+                                <label class="field-label">Owner 2 Signature <span class="optional">(if applicable)</span></label>
+                                <div class="signature-wrapper">
+                                    <div class="signature-instructions">
+                                        <span>✍️ Sign below using your mouse or finger</span>
+                                        <button type="button" class="clear-sig-btn" id="clear_owner2">Clear</button>
+                                    </div>
+                                    <canvas id="owner2_signature_canvas" class="signature-canvas"></canvas>
+                                    <input type="hidden" id="owner2_signature_data" name="owner2_signature_data">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- SECTION 3: DOCUMENT UPLOADS -->
+                <!-- ============================================================ -->
+                <div class="form-section" id="step-documents">
+                    <div class="section-header">
+                        <div class="section-badge">03</div>
+                        <div class="section-title">
+                            <h2>Required Documents</h2>
+                            <p>Upload your supporting documents</p>
+                        </div>
+                    </div>
+
+                    <div class="upload-grid">
+
+                        <!-- Bank Statements + ID Upload -->
+                        <div class="upload-card full-width">
+                            <div class="upload-card-header">
+                                <span class="upload-icon">📄</span>
+                                <div>
+                                    <h3>Bank Statements & Driver's License</h3>
+                                    <p>Last 4 months business bank statements + Driver's License or State ID (Front & Back)</p>
+                                </div>
+                                <span class="upload-badge required-badge">Required</span>
+                            </div>
+                            <div class="upload-zone" id="documents_zone">
+                                <input type="file" id="documents_upload" name="documents_upload" accept=".pdf,.jpg,.jpeg,.png,.tiff" multiple hidden>
+                                <label for="documents_upload" class="upload-zone-label">
+                                    <span class="upload-zone-icon">📁</span>
+                                    <span class="upload-zone-text">Drag & drop files here or <span class="upload-browse">browse</span></span>
+                                    <span class="upload-zone-hint">Accepted: PDF, JPG, PNG, TIFF • Max 10 files</span>
+                                </label>
+                                <div id="documents_file_list" class="file-list"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- SECTION 4: AGREEMENT -->
+                <!-- ============================================================ -->
+                <div class="form-section" id="step-agreement">
+                    <div class="section-header">
+                        <div class="section-badge">04</div>
+                        <div class="section-title">
+                            <h2>Agreement & Authorization</h2>
+                            <p>Please review and agree to our terms</p>
+                        </div>
+                    </div>
+
+                    <div class="agreement-box">
+                        <p>The Merchant and Owner(s)/Officer(s) identified above (individually, "Applicant") each represents, acknowledges and agrees that all information and documents provided to Grove Capital Funding LLC are true, accurate and complete. Applicant authorizes Grove Capital Funding LLC to disclose all information and documents to funding partners, lenders, and assignees involved in potential transactions. Recipients are authorized to request and receive investigative reports, credit reports, statements from creditors or financial institutions, and any other information deemed necessary. Applicant waives and releases any claims against Recipients arising from any act or omission relating to the requesting, receiving, or release of information.</p>
+                        <p><strong>Consent to Communications:</strong> Applicant consents to receive marketing calls and texts from Grove Capital Funding LLC and its affiliates or assigns using automated technology. Consent is not a condition of funding. Standard message and data rates may apply.</p>
+                    </div>
+                    <br>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label" for="agreement_checkbox">
+                            <input type="checkbox" id="agreement_checkbox" name="agreement_checkbox" required>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">
+                                I certify that all information provided is true and accurate. I have read and agree to the
+                                <a href="terms.html" target="_blank" class="terms-link"><strong>Privacy Policy & Terms and Conditions</strong></a>.
+                            </span>
+                        </label>
+                        <span class="field-error" id="err_agreement"></span>
+                    </div>
+
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- SUBMIT BUTTON -->
+                <!-- ============================================================ -->
+                <div class="submit-section">
+                    <div class="submit-info">
+                        <span>🔒 Your information is encrypted and secure</span>
+                        <span>📋 You will receive a confirmation once submitted</span>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="submit-btn-text">Submit Application</span>
+                        <span class="submit-btn-icon">→</span>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- SUCCESS MODAL -->
+    <div class="success-modal" id="successModal">
+        <div class="success-modal-content">
+            <div class="success-icon">✅</div>
+            <h2>Application Submitted!</h2>
+            <p>Thank you for applying with Grove Capital Funding. Our team will review your application and contact you within 24-48 hours.</p>
+            <button class="success-btn" onclick="window.location.href='index.html'">Return to Home</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="form-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Grove Capital Funding LLC. All rights reserved.</p>
+            <!-- <p><a href="terms.html">Privacy Policy & Terms and Conditions</a></p> -->
+        </div>
+    </footer>
+
+    <script src="form-handler.js"></script>
+</body>
+</html>
